@@ -2,15 +2,14 @@
 const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 const nextConfig = {
-    async rewrites () {
-        return[
+    async rewrites() {
+        return [
             {
-                source:'/api/:path*',
+                source: '/api/:path*',
                 destination: `${apiUrl}/:path*`
             }
         ]
     }
 }
-
 
 module.exports = nextConfig
