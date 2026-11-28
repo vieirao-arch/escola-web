@@ -104,7 +104,9 @@ export default function Alunos() {
             <section className="flex justify-content-end">
                 <Button icon="pi pi-plus" outlined label="Cadastrar aluno" onClick={() => router.push('/alunos/cadastrar')}></Button>
             </section>
-            <DataTable emptyMessage="Nenhum aluno encontrado" value={alunos} loading={carregando} size="small">
+            <DataTable 
+            onRowClick={(evento) => router . push ( `/alunos/${evento.data.id}`)}
+            emptyMessage="Nenhum aluno encontrado" value={alunos} loading={carregando} size="small">
                 <Column header="Matricula" field="matricula"></Column>
                 <Column header="Nome" field="nome"></Column>
                 <Column
